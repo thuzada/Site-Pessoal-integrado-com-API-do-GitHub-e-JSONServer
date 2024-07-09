@@ -1,0 +1,98 @@
+{
+  "perfil": {
+    "nome": "Arthur Augusto",
+    "foto": "assets/img/IMG_7691.jpeg",
+    "habilidades": [
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "C",
+      "Git"
+    ],
+    "email": "ar7huraugusto@gmail.com",
+    "github": "https://github.com/thuzada",
+    "bio": "Desenvolvedor entusiasta focado em projetos criativos e educativos.",
+    "readmeRepo": "https://api.github.com/repos/thuzada/thuzada/readme"
+  },
+  "repositorios": [
+    {
+      "id": 1,
+      "nome": "Descontrole Financeiro",
+      "descricao": "Sistema para controle financeiro.",
+      "url": "https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-m-20241-g3-descontrole-financeiro"
+    },
+    {
+      "id": 2,
+      "nome": "Semáforo pelo Tinkercad",
+      "descricao": "Projeto de semáforo utilizando Tinkercad.",
+      "url": "https://github.com/thuzada/SEMAFORO-PELO-TINKERCAD"
+    },
+    {
+      "id": 3,
+      "nome": "Astro Dog",
+      "descricao": "Jogo desenvolvido no Scratch.",
+      "url": "https://github.com/thuzada/Astro-dog-jogo-no-scratch"
+    },
+    {
+      "id": 4,
+      "nome": "Crédito Inteligente",
+      "descricao": "Site de educação financeira voltado para jovens universitários.",
+      "url": "https://github.com/thuzada/credito-inteligente"
+    },
+    {
+      "id": 5,
+      "nome": "Jurassic Flyer",
+      "descricao": "Implementação simples do jogo 'Jurassic Flyer' em Python usando Pygame.",
+      "url": "https://github.com/thuzada/jurassic-flyer"
+    }
+  ],
+  "conteudos": {
+    "albuns": [
+      {
+        "id": 1,
+        "titulo": "Album 1",
+        "descricao": "Descrição do Album 1",
+        "urlImagem": "url_da_imagem_de_capa.jpg",
+        "urlConteudo": "url_do_album"
+      },
+      {
+        "id": 2,
+        "titulo": "Album 2",
+        "descricao": "Descrição do Album 2",
+        "urlImagem": "url_da_imagem_de_capa_2.jpg",
+        "urlConteudo": "url_do_album_2"
+      }
+    ],
+    "destaques": [
+      {
+        "id": 1,
+        "titulo": "Destaque 1",
+        "descricao": "Descrição do Destaque 1",
+        "urlImagem": "url_da_imagem.jpg",
+        "urlConteudo": "url_do_destaque"
+      },
+      {
+        "id": 2,
+        "titulo": "Destaque 2",
+        "descricao": "Descrição do Destaque 2",
+        "urlImagem": "url_da_imagem_2.jpg",
+        "urlConteudo": "url_do_destaque_2"
+      }
+    ]
+  },
+  "colegas": [
+    {
+      "id": 1,
+      "nome": "Colega 1",
+      "urlFoto": "url_da_foto_do_colega.jpg",
+      "urlPerfil": "https://github.com/colega1"
+    },
+    {
+      "id": 2,
+      "nome": "Colega 2",
+      "urlFoto": "url_da_foto_do_colega_2.jpg",
+      "urlPerfil": "https://github.com/colega2"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "arthur-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio do Arthur Augusto",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Arthur Augusto",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "json-server": "^0.17.0"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.1.0",
+    "@eslint/js": "^9.5.0",
+    "eslint": "^9.5.0",
+    "eslint-plugin-react": "^7.34.3",
+    "globals": "^15.6.0",
+    "typescript-eslint": "^7.14.1"
+  }
+}

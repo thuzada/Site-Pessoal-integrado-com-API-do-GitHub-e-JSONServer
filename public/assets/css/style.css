@@ -1,0 +1,316 @@
+/* Estilos Globais */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f5f5f7;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    color: #1d1d1f;
+    line-height: 1.6;
+}
+
+/* Cabeçalho e Rodapé */
+header, footer {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    position: relative;
+    padding: 10px 0;
+}
+
+.navbar {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1d1d1f;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #1d1d1f;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #0071e3;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #1d1d1f;
+    color: #ffffff;
+}
+
+/* Seções */
+section {
+    padding: 50px 0;
+    margin-top: 80px;
+    max-width: 1200px;
+    margin: 80px auto;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #0071e3;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Seção 1 - Perfil */
+#secao1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+#secao1 img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+#secao1 p {
+    max-width: 800px;
+    margin: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+#secao1 a {
+    margin-top: 10px;
+    color: #0071e3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#secao1 a:hover {
+    text-decoration: underline;
+}
+
+/* Seção 2 - Cards de Repositórios */
+#secao2 .card {
+    border: none;
+    margin-bottom: 1rem;
+    max-width: 350px;
+    margin: 20px;
+    background-color: #ffffff;
+    color: #1d1d1f;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+#secao2 .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#secao2 .card-body {
+    padding: 1rem;
+    text-align: left;
+}
+
+/* Subtítulos */
+h10 {
+    font-size: 20px;
+    color: black;
+}
+
+/* Estilos específicos para dispositivos móveis */
+@media only screen and (max-width: 768px) {
+    #secao2 .card {
+        max-width: 100%;
+        margin: 10px;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    header nav ul li {
+        margin: 10px;
+    }
+}
+
+/* Carousel */
+.carousel-item img {
+    max-width: 50px;
+
+    margin: 0 auto;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    filter: invert(1);
+}
+
+/* Seção 4 - Cards de Colegas */
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.col-sm-4 {
+    flex: 1;
+    max-width: calc(30% - 10px);
+    margin: 0 5px 10px;
+}
+
+.card {
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+h2, h3, h4, h6 {
+    font-size: 35px;
+    text-align: left;
+    margin: 20px 0;
+}
+
+/* Cards de Repositórios */
+.repo-card {
+    display: block;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.repo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.repo-card .card {
+    height: 100%;
+}
+
+.repo-card .card-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    transition: background 0.3s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.repo-card .card-body h5 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.repo-card .card-body p {
+    font-size: 1rem;
+    margin: 10px 0 0;
+}
+
+.repo-card .card-body .repo-stats {
+    margin-top: 10px;
+}
+
+.repo-card .card-body .repo-stats i {
+    margin-right: 5px;
+}
+
+.repo-card .card-body .repo-stats span {
+    margin-right: 15px;
+}
+
+/* Adicionando Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Gradiente no Header e Footer */
+header, footer {
+    background: linear-gradient(135deg, #0071e3, #1d1d1f);
+    color: #ffffff;
+}
+
+/* Efeito de transição nas seções */
+section {
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+section:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}

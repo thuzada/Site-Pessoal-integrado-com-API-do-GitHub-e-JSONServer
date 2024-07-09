@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes dos Repositórios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-5oW6DrHlEw1sgM0QxjsUO79KzyDdW8z3Of9M/ZmoUx8jR7RGmxGP+v67t8DhMKl3OKUvto9BwYoPAMeDbNwGZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">Arthur Augusto</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#perfil">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#repositorios">Repositórios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#conteudos">Conteúdos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#colegas">Colegas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Seção do Repositório "ti-1-pmg-cc-m-20241-g3-descontrole-financeiro" -->
+    <section id="repo1" class="container mt-4">
+        <div class="repo-details" id="repo1-details">
+            <!-- Aqui serão inseridos os detalhes do repositório -->
+        </div>
+    </section>
+
+    <!-- Seção do Repositório "Astro-dog-jogo-no-scratch" -->
+    <section id="repo2" class="container mt-4">
+        <div class="repo-details" id="repo2-details">
+            <!-- Aqui serão inseridos os detalhes do repositório -->
+        </div>
+    </section>
+
+    <!-- Seção do Repositório "Jurassic-Flyer" -->
+    <section id="repo3" class="container mt-4">
+        <div class="repo-details" id="repo3-details">
+            <!-- Aqui serão inseridos os detalhes do repositório -->
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const repoIds = [
+                "ti-1-pmg-cc-m-20241-g3-descontrole-financeiro",
+                "Astro-dog-jogo-no-scratch",
+                "Jurassic-Flyer"
+            ];
+
+            repoIds.forEach((repoId, index) => {
+                const githubApiUrl = `https://api.github.com/repos/thuzada/${repoId}`;
+
+                fetch(githubApiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        const {
+                            name,
+                            description,
+                            created_at,
+                            owner,
+                            html_url,
+                            language,
+                            topics,
+                            stargazers_count,
+                            watchers_count,
+                            forks_count,
+                            license
+                        } = data;
+
+                        // Formatando a data de criação
+                        const createdAtDate = new Date(created_at);
+                        const formattedCreatedAt = createdAtDate.toLocaleDateString('pt-BR');
+
+                        // Criando elementos HTML dinâmicos
+                        const repoCard = document.createElement('div');
+                        repoCard.classList.add('card', 'mb-4');
+
+                        repoCard.innerHTML = `
+                            <div class="card-header">
+                                <h2 class="card-title">${name}</h2>
+                            </div>
+                            <div class="card-body">
+                                <p>${description || 'Sem descrição disponível'}</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>Data de Criação:</strong> ${formattedCreatedAt}</li>
+                                    <li class="list-group-item"><strong>Proprietário:</strong> ${owner.login}</li>
+                                    <li class="list-group-item"><strong>Linguagem Principal:</strong> ${language || 'Não especificada'}</li>
+                                    <li class="list-group-item"><strong>Tags:</strong> ${topics.length > 0 ? topics.join(', ') : 'Nenhum'}</li>
+                                    <li class="list-group-item"><strong>Estrelas:</strong> ${stargazers_count.toLocaleString()}</li>
+                                    <li class="list-group-item"><strong>Observadores:</strong> ${watchers_count.toLocaleString()}</li>
+                                    <li class="list-group-item"><strong>Forks:</strong> ${forks_count.toLocaleString()}</li>
+                                    <li class="list-group-item"><strong>Licença:</strong> ${license ? license.name : 'Não especificada'}</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <img src="${owner.avatar_url}" class="img-fluid rounded-circle" style="max-width: 50px;" alt="Avatar do Proprietário">
+                                <a href="${html_url}" class="btn btn-primary" target="_blank">Acessar Repositório</a>
+                            </div>
+                        `;
+
+                        // Adicionando o card do repositório à seção específica
+                        const repoDetailsElement = document.getElementById(`repo${index + 1}-details`);
+                        repoDetailsElement.appendChild(repoCard);
+                    })
+                    .catch(error => {
+                        console.error(`Erro ao obter dados do repositório ${repoId}:`, error);
+                        const errorMessage = `<div class="alert alert-danger">Erro ao carregar os detalhes do repositório ${repoId}. Por favor, tente novamente mais tarde.</div>`;
+                        const repoDetailsElement = document.getElementById(`repo${index + 1}-details`);
+                        repoDetailsElement.insertAdjacentHTML('beforeend', errorMessage);
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>

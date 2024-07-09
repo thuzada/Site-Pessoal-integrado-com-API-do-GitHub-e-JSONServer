@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site do Arthur</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Arthur Augusto</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#perfil">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#repositorios">Repositórios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#conteudos">Conteúdos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#colegas">Colegas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="perfil" class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="assets/img/IMG_7691.jpeg" alt="Avatar" class="img-fluid rounded-circle">
+            </div>
+            <div class="col-md-8">
+                <h2>Arthur Augusto</h2>
+                
+                <div id="readme-content">
+                    <!-- Aqui será inserido o conteúdo do README -->
+                </div>
+                <a href="mailto:ar7huraugusto@gmail.com"><img
+                    src="https://img2.gratispng.com/20180328/gie/kisspng-email-logo-irregular-exposure-showroom-fashion-a-circle-5abb3e7b5154c5.4368389815222206673331.jpg"
+                    alt="Gmail" style="width: 30px; margin-right: 10px;"></a>
+                <a href="https://github.com/thuzada" target="_blank"><img
+                    src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub"
+                    style="width: 30px;"></a>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const username = "thuzada";
+            const readmeApiUrl = `https://api.github.com/repos/${username}/${username}/readme`;
+
+            // Obter e exibir o README
+            fetch(readmeApiUrl, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3.raw'
+                }
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("readme-content").innerHTML = data; // Insere o conteúdo do README diretamente
+            })
+            .catch(error => console.error("Erro ao obter README do GitHub:", error));
+        });
+    </script>
+
+    <section id="repositorios" class="container mt-5">
+        <h2>Meus Repositórios</h2>
+        <div class="row" id="repo-cards">
+            <!-- Card Example -->
+            <div class="col-md-4">
+                <a href="repo.html#repo1" class="card-link">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Crédito Inteligente</h5>
+                            <p class="card-text">Site de educação financeira voltado para jovens universitários</p>
+                            <p class="card-text">Visualizações: <span id="watchers-repo1">0</span> Likes: <span id="stars-repo1">0</span></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="repo.html#repo2" class="card-link">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Astro Dog</h5>
+                            <p class="card-text">"Astro Dog" é uma aventura espacial onde um cachorro, perdido de seus amigos no vasto cosmos, busca reunir-se com eles.</p>
+                            <p class="card-text">Visualizações: <span id="watchers-repo2">0</span> Likes: <span id="stars-repo2">0</span></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="repo.html#repo3" class="card-link">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Jurassic Flyer</h5>
+                            <p class="card-text">Implementação simples do jogo "Jurassic Flyer" em Python usando Pygame.</p>
+                            <p class="card-text">Visualizações: <span id="watchers-repo3">0</span> Likes: <span id="stars-repo3">0</span></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Repetir para mais cards -->
+        </div>
+    </section>
+
+    <section id="conteudos" class="container mt-5">
+        <h2>Conteúdos</h2>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" id="carousel-content">
+                <!-- Conteúdos serão inseridos aqui pelo app.js -->
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="colegas" class="container mt-5">
+        <h2>Colegas de Trabalho</h2>
+        <div class="row" id="colleagues-cards">
+            <!-- Colegas serão inseridos aqui pelo app.js -->
+        </div>
+    </section>
+
+    <footer class="container mt-5">
+        <p>&copy; 2023 Arthur Augusto</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/scripts/app.js"></script>
+</body>
+</html>
